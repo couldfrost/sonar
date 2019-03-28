@@ -1,0 +1,12 @@
+language: java
+sudo: true
+dist: trusty
+addons:
+  sonarcloud:
+    organization: alvaro2302-github
+    token:
+      secure: "Hrdodi5OB5OA6Shvj7OUvUbeTOPBWrhjGTVSG8mMPEtwdQYiVehJrkWhU4pukpboG6ekRc5o+lMEB2+XXEVRuBSeI1QAebY60VqTRsXX1DSMJuMsojgN02MeDjzJ2aQb6OF6iyxzHnwuDApFasRvBBRZ6Ecq/D4hWF6musItefD45ehO5/JDwXAKCyIh9GE3sNR0zHZAhWwpu8GmmIDJ4diP+nhWypY6CodNaxdluEYuaxvuHfdUHovR5ume2ttF9om2PYc0ynGzXl06igwBHshDWrpXD+ydcZJgzNAqPElAMEKH2Yc0K9FCF46sqyW248Mzb9gxEp2ezS7alM+6xlcDisnJrpFXecUNTo5nxb4+spvGz85HY7GO1EhP5KzNH1F4V6myRoHYCZLLf0EM7o06Cinc7708/LosKqpyCjf3K3xKtrq+dmub5N2cNHoVdkeSyHL13D0oz+YxHEsop1RMOFd8pKmqL0+31DqUYVFSQmfcJXdYknGsc7v9/8lUMg9mQLk8/LVRT7ytsJdY0hBIxBBhoR68PCRAMpR1xV2alcRsYCmk28ebFZLMHtvaZAH5tajm09rwtBDr/HRFUpetQruEchuDfKKQTVPFflQtKBahhl6McLTaK081gGkV1CkJU6134MzUY95G1OxtBYWC/hAsGez1ocW7yp26q5s="
+script:
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+before_install:
+- chmod +x mvnw
